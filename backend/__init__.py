@@ -1,0 +1,1 @@
+"""StockSense inventory management backend."""
