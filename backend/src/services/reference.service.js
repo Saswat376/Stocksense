@@ -1,0 +1,1 @@
+// Transactional reference-number generation.
