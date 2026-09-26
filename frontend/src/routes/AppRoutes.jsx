@@ -1,17 +1,78 @@
-import { Route, Routes } from 'react-router-dom';
-import LoginPage from '../pages/auth/LoginPage.jsx';
-import SignupPage from '../pages/auth/SignupPage.jsx';
-import DashboardPage from '../pages/dashboard/DashboardPage.jsx';
-import ProductListPage from '../pages/products/ProductListPage.jsx';
-import ProtectedRoute from './ProtectedRoute.jsx';
+import { Routes, Route } from "react-router-dom";
+import AppLayout from "../components/layout/AppLayout";
 
-export default function AppRoutes() {
-  return <Routes>
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="/signup" element={<SignupPage />} />
-    <Route element={<ProtectedRoute />}>
-      <Route path="/" element={<DashboardPage />} />
-      <Route path="/products" element={<ProductListPage />} />
-    </Route>
-  </Routes>;
+import DashboardPage from "../pages/DashboardPage";
+import ProductsPage from "../pages/ProductsPage";
+import ReceiptsPage from "../pages/ReceiptsPage";
+import DeliveriesPage from "../pages/DeliveriesPage";
+import TransfersPage from "../pages/TransfersPage";
+import AdjustmentsPage from "../pages/AdjustmentsPage";
+import MoveHistoryPage from "../pages/MoveHistoryPage";
+import StockPage from "../pages/StockPage";
+import WarehousesPage from "../pages/WarehousesPage";
+import LocationsPage from "../pages/LocationsPage";
+import ProfilePage from "../pages/ProfilePage";
+
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route element={<AppLayout />}>
+
+        <Route path="/" element={<DashboardPage />} />
+
+        <Route
+          path="/products"
+          element={<ProductsPage />}
+        />
+
+        <Route
+          path="/operations/receipts"
+          element={<ReceiptsPage />}
+        />
+
+        <Route
+          path="/operations/deliveries"
+          element={<DeliveriesPage />}
+        />
+
+        <Route
+          path="/operations/transfers"
+          element={<TransfersPage />}
+        />
+
+        <Route
+          path="/operations/adjustments"
+          element={<AdjustmentsPage />}
+        />
+
+        <Route
+          path="/move-history"
+          element={<MoveHistoryPage />}
+        />
+
+        <Route
+          path="/stock"
+          element={<StockPage />}
+        />
+
+        <Route
+          path="/settings/warehouses"
+          element={<WarehousesPage />}
+        />
+
+        <Route
+          path="/settings/locations/1"
+          element={<LocationsPage />}
+        />
+
+        <Route
+          path="/profile"
+          element={<ProfilePage />}
+        />
+
+      </Route>
+    </Routes>
+  );
 }
+
+export default AppRoutes;

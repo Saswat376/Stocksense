@@ -1,5 +1,21 @@
-import { Outlet } from 'react-router-dom';
-import Sidebar from './Sidebar.jsx';
-import Topbar from './Topbar.jsx';
+import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import Topbar from "./Topbar";
 
-export default function AppLayout() { return <><Sidebar /><Topbar /><Outlet /></>; }
+function AppLayout() {
+  return (
+    <div className="app-layout">
+      <Sidebar />
+
+      <div className="main-section">
+        <Topbar />
+
+        <main className="page-content">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+}
+
+export default AppLayout;

@@ -1,4 +1,7 @@
-import app from './app.js';
-import { env } from './config/env.js';
+const app = require("./app");
 
-app.listen(env.port, () => console.log(`StockSense API listening on port ${env.port}`));
+const PORT = 5000;
+
+app.listen(PORT, () => {
+  console.log(`StockSense backend running on http://localhost:${PORT}`);
+});
